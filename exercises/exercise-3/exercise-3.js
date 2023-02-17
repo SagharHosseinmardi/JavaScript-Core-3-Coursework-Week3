@@ -6,3 +6,18 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+function orderReceipt(order) {
+  console.log("QTY".padEnd(10) + "Item".padEnd(20) + "Total");
+  let costOfAllOrders = 0;
+  order.forEach((product) => {
+    let { itemName, quantity, unitPrice } = product;
+    let total = quantity * unitPrice;
+    costOfAllOrders += total;
+    console.log(
+      `${quantity.toString().padEnd(10)}${itemName.padEnd(20)}${total}`
+    );
+  });
+  console.log(`\nTotal: ${costOfAllOrders}`);
+}
+orderReceipt(order);
